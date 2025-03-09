@@ -1,0 +1,56 @@
+// App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Home from "./components/Home";
+import Game from "./components/Game";
+import Challenge from "./components/Challenge";
+
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#90caf9",
+    },
+    secondary: {
+      main: "#f48fb1",
+    },
+    background: {
+      default: "#000428",
+      paper: "#004e92",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "Inter",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+    ].join(","),
+    h1: {
+      fontFamily: "'Pacifico', cursive",
+    },
+  },
+});
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/challenge" element={<Challenge />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+export default App;
