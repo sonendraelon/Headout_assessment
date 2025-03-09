@@ -74,7 +74,7 @@ const Challenge = () => {
       sx={{
         minHeight: "100vh",
         background: "linear-gradient(to bottom right, #000428, #004e92)",
-        padding: 4,
+        padding: { xs: 2, sm: 4, md: 6 },
         color: "white",
       }}
     >
@@ -83,7 +83,7 @@ const Challenge = () => {
           <Paper
             elevation={10}
             sx={{
-              padding: 6,
+              padding: { xs: 3, sm: 4, md: 6 },
               borderRadius: 4,
               background: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(10px)",
@@ -93,7 +93,7 @@ const Challenge = () => {
             <Typography
               variant="h2"
               sx={{
-                mb: 4,
+                mb: { xs: 2, sm: 3, md: 4 },
                 fontFamily: "'Pacifico', cursive",
                 textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
               }}
@@ -172,9 +172,9 @@ const Challenge = () => {
               onClick={handlePlay}
               size="large"
               sx={{
-                py: 2,
-                px: 6,
-                fontSize: "1.2rem",
+                py: { xs: 1, sm: 2 },
+                px: { xs: 4, sm: 6 },
+                fontSize: { xs: "1rem", sm: "1.2rem" },
                 background: "linear-gradient(45deg, #4CAF50 30%, #81C784 90%)",
                 boxShadow: "0 3px 5px 2px rgba(76, 175, 80, .3)",
                 "&:hover": {

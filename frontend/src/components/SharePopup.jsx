@@ -38,7 +38,7 @@ const SharePopup = ({ username, onClose }) => {
         sx={{
           background: "linear-gradient(135deg, #000428 0%, #004e92 100%)",
           color: "white",
-          padding: 4,
+          padding: { xs: 2, sm: 4 },
           textAlign: "center",
         }}
       >
@@ -62,7 +62,7 @@ const SharePopup = ({ username, onClose }) => {
           Challenge Friends
         </Typography>
 
-        <Box sx={{ my: 4 }}>
+        <Box sx={{ my: { xs: 2, sm: 4 } }}>
           <Typography variant="h5" gutterBottom>
             Share your explorer link:
           </Typography>
@@ -81,8 +81,8 @@ const SharePopup = ({ username, onClose }) => {
               startIcon={<ContentCopy />}
               sx={{
                 background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-                py: 1.5,
-                px: 4,
+                py: { xs: 1, sm: 1.5 },
+                px: { xs: 2, sm: 4 },
               }}
             >
               Copy Link
@@ -95,8 +95,8 @@ const SharePopup = ({ username, onClose }) => {
               startIcon={<WhatsApp />}
               sx={{
                 background: "linear-gradient(45deg, #25D366 30%, #128C7E 90%)",
-                py: 1.5,
-                px: 4,
+                py: { xs: 1, sm: 1.5 },
+                px: { xs: 2, sm: 4 },
               }}
             >
               WhatsApp
@@ -105,7 +105,7 @@ const SharePopup = ({ username, onClose }) => {
 
           <Box
             sx={{
-              mt: 4,
+              mt: { xs: 2, sm: 4 },
               padding: 3,
               borderRadius: 2,
               background: "rgba(255, 255, 255, 0.1)",

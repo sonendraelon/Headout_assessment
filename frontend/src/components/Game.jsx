@@ -128,13 +128,15 @@ const Game = () => {
       sx={{
         minHeight: "100vh",
         background: "linear-gradient(to bottom right, #000428, #004e92)",
-        padding: 4,
+        padding: { xs: 2, sm: 4, md: 6 },
         color: "white",
       }}
     >
       <Box sx={{ maxWidth: 1200, margin: "0 auto" }}>
-        <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
-          <Public sx={{ fontSize: 40, mr: 2 }} />
+        <Box
+          sx={{ display: "flex", alignItems: "center", mb: { xs: 2, sm: 4 } }}
+        >
+          <Public sx={{ fontSize: { xs: 30, sm: 40 }, mr: 2 }} />
           <Typography variant="h3" sx={{ fontFamily: "'Pacifico', cursive" }}>
             Globetrotter Challenge
           </Typography>
@@ -173,7 +175,7 @@ const Game = () => {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
             gap: 2,
-            my: 4,
+            my: { xs: 2, sm: 4 },
           }}
         >
           {gameData.options.map((option, index) => (
@@ -183,8 +185,8 @@ const Game = () => {
                 onClick={() => handleOptionSelect(option)}
                 disabled={feedback !== null}
                 sx={{
-                  py: 3,
-                  fontSize: "1.2rem",
+                  py: { xs: 2, sm: 3 },
+                  fontSize: { xs: "1rem", sm: "1.2rem" },
                   background:
                     feedback?.correctAnswer === option ? "#4CAF50" : "#2196F3",
                   "&:hover": { transform: "scale(1.05)" },

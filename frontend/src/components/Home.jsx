@@ -53,7 +53,7 @@ const Home = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 4,
+        padding: { xs: 2, sm: 4, md: 6 },
       }}
     >
       <Container maxWidth="md">
@@ -61,7 +61,7 @@ const Home = () => {
           <Paper
             elevation={10}
             sx={{
-              padding: 6,
+              padding: { xs: 3, sm: 4, md: 6 },
               borderRadius: 4,
               background: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(10px)",
@@ -73,15 +73,26 @@ const Home = () => {
               gutterBottom
               sx={{
                 color: "#fff",
-                mb: 4,
+                mb: { xs: 2, sm: 3, md: 4 },
                 textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+                fontSize: {
+                  xs: "2rem",
+                  sm: "3rem",
+                  md: "4rem",
+                  lg: "5rem",
+                  xl: "6rem",
+                },
               }}
             >
               🌍 Globetrotter Challenge
             </Typography>
 
             <Fade in timeout={800}>
-              <Box component="form" onSubmit={handleRegister} sx={{ mb: 4 }}>
+              <Box
+                component="form"
+                onSubmit={handleRegister}
+                sx={{ mb: { xs: 2, sm: 3, md: 4 } }}
+              >
                 <TextField
                   fullWidth
                   variant="outlined"
@@ -98,7 +109,15 @@ const Home = () => {
                     },
                   }}
                   InputProps={{
-                    style: { fontSize: "1.2rem" },
+                    style: {
+                      fontSize: {
+                        xs: "0.8rem", // extra small screens
+                        sm: "1rem", // small screens
+                        md: "1.2rem", // medium screens (tablets)
+                        lg: "1.4rem", // large screens
+                        xl: "1.6rem", // extra large screens
+                      },
+                    },
                   }}
                 />
                 <Button
@@ -106,9 +125,9 @@ const Home = () => {
                   variant="contained"
                   size="large"
                   sx={{
-                    py: 2,
-                    px: 6,
-                    fontSize: "1.1rem",
+                    py: { xs: 1, sm: 2 },
+                    px: { xs: 4, sm: 6 },
+                    fontSize: { xs: "1rem", sm: "1.1rem" },
                     background:
                       "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
                     boxShadow: "0 3px 5px 2px rgba(33, 203, 243, .3)",
@@ -129,9 +148,9 @@ const Home = () => {
                   onClick={handleChallenge}
                   size="large"
                   sx={{
-                    py: 2,
-                    px: 6,
-                    fontSize: "1.1rem",
+                    py: { xs: 1, sm: 2 },
+                    px: { xs: 4, sm: 6 },
+                    fontSize: { xs: "1rem", sm: "1.1rem" },
                     background:
                       "linear-gradient(45deg, #FF4081 30%, #F50057 90%)",
                     boxShadow: "0 3px 5px 2px rgba(255, 64, 129, .3)",
