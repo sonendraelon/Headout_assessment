@@ -47,7 +47,7 @@ const Game = () => {
   const fetchGameData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/destinations/game"
+        "https://headout-assessment-3.onrender.com/api/destinations/game"
       );
       setGameData(res.data);
       setFeedback(null);
@@ -78,16 +78,19 @@ const Game = () => {
   const handleGuess = async (guess) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/destinations/guess",
+        "https://headout-assessment-3.onrender.com/api/destinations/guess",
         {
           destinationId: gameData.destinationId,
           guess: guess.name, // Ensure guess is a string
         }
       );
       setFeedback(res.data);
-      await axios.post(`http://localhost:5000/api/users/${username}/score`, {
-        result: res.data.correct ? "correct" : "incorrect",
-      });
+      await axios.post(
+        `https://headout-assessment-3.onrender.com/api/users/${username}/score`,
+        {
+          result: res.data.correct ? "correct" : "incorrect",
+        }
+      );
       if (res.data.correct) {
         setShowConfetti(true);
       }

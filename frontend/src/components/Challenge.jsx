@@ -27,7 +27,7 @@ const Challenge = () => {
     const fetchInviter = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/users/${inviterUsername}`
+          `https://headout-assessment-3.onrender.com/api/users/${inviterUsername}`
         );
         setInviter(res.data);
         setLoading(false);

@@ -23,9 +23,12 @@ const Home = () => {
     e.preventDefault();
     if (!username) return;
     try {
-      await axios.post("http://localhost:5000/api/users/register", {
-        username,
-      });
+      await axios.post(
+        "https://headout-assessment-3.onrender.com/api/users/register",
+        {
+          username,
+        }
+      );
       localStorage.setItem("username", username);
       navigate("/game");
     } catch (error) {
