@@ -1,4 +1,4 @@
-// Game.jsx
+// Import necessary libraries and components
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Confetti from "react-confetti";
@@ -23,6 +23,7 @@ import {
   Celebration,
 } from "@mui/icons-material";
 
+// Define a styled component for animated card
 const AnimatedCard = styled(Card)(({ theme }) => ({
   transition: theme.transitions.create("transform"),
   "&:hover": {
@@ -35,7 +36,9 @@ const AnimatedCard = styled(Card)(({ theme }) => ({
   margin: "1rem 0",
 }));
 
+// Main Game component
 const Game = () => {
+  // Define state variables
   const [gameData, setGameData] = useState(null);
   const [feedback, setFeedback] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -44,6 +47,7 @@ const Game = () => {
   const username = localStorage.getItem("username");
   const navigate = useNavigate();
 
+  // Fetch game data from API
   const fetchGameData = async () => {
     try {
       const res = await axios.get(
@@ -58,6 +62,7 @@ const Game = () => {
     }
   };
 
+  // Use effect to fetch game data and set progress timer
   useEffect(() => {
     fetchGameData();
     const timer = setInterval(() => {
@@ -75,6 +80,7 @@ const Game = () => {
     };
   }, []);
 
+  // Handle user's guess
   const handleGuess = async (guess) => {
     try {
       const res = await axios.post(
@@ -99,15 +105,18 @@ const Game = () => {
     }
   };
 
+  // Fetch new game data for the next challenge
   const handleNext = () => {
     fetchGameData();
   };
 
+  // Handle option selection
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
     handleGuess(option);
   };
 
+  // Display loading screen if game data is not available
   if (!gameData)
     return (
       <Box
@@ -123,6 +132,7 @@ const Game = () => {
       </Box>
     );
 
+  // Render game interface
   return (
     <Box
       sx={{

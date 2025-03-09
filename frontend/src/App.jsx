@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Game from "./components/Game";
 import Challenge from "./components/Challenge";
 
+// Create a theme instance with custom palette, typography, and breakpoints
 const theme = createTheme({
   palette: {
     mode: "dark",
@@ -53,9 +54,10 @@ function App() {
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/game" element={<Game />} />
-          <Route path="/challenge" element={<Challenge />} />
+          <Route path="/" element={<Home />} /> {/* Home route */}
+          <Route path="/game" element={<Game />} /> {/* Game route */}
+          <Route path="/challenge" element={<Challenge />} />{" "}
+          {/* Challenge route */}
         </Routes>
       </Router>
     </ThemeProvider>

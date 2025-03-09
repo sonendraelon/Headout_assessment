@@ -1,5 +1,6 @@
 const Destination = require("../models/Destination");
 
+// Starter dataset with predefined destinations, clues, fun facts, and trivia
 const starterDataset = [
   {
     name: "Paris",
@@ -48,6 +49,7 @@ const starterDataset = [
   },
 ];
 
+// Function to initialize the dataset if the database is empty
 async function initializeDataset() {
   try {
     const count = await Destination.countDocuments();

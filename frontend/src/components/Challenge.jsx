@@ -16,12 +16,12 @@ import {
 import { EmojiEvents, Public, FlightTakeoff } from "@mui/icons-material";
 
 const Challenge = () => {
-  const [inviter, setInviter] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const queryParams = new URLSearchParams(location.search);
-  const inviterUsername = queryParams.get("user");
+  const [inviter, setInviter] = useState(null); // State to store inviter details
+  const [loading, setLoading] = useState(true); // State to manage loading state
+  const location = useLocation(); // Hook to get current location
+  const navigate = useNavigate(); // Hook to navigate programmatically
+  const queryParams = new URLSearchParams(location.search); // Parse query parameters
+  const inviterUsername = queryParams.get("user"); // Get inviter username from query params
 
   useEffect(() => {
     const fetchInviter = async () => {
@@ -29,21 +29,21 @@ const Challenge = () => {
         const res = await axios.get(
           `https://headout-assessment-3.onrender.com/api/users/${inviterUsername}`
         );
-        setInviter(res.data);
-        setLoading(false);
+        setInviter(res.data); // Set inviter data
+        setLoading(false); // Set loading to false
       } catch (error) {
         console.error(error);
-        setLoading(false);
+        setLoading(false); // Set loading to false on error
       }
     };
 
     if (inviterUsername) {
-      fetchInviter();
+      fetchInviter(); // Fetch inviter data if username is present
     }
   }, [inviterUsername]);
 
   const handlePlay = () => {
-    navigate("/game");
+    navigate("/game"); // Navigate to game page
   };
 
   if (loading) {

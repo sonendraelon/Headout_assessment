@@ -11,19 +11,20 @@ import {
 } from "@mui/material";
 import { Close, ContentCopy, WhatsApp } from "@mui/icons-material";
 
+// Transition component for the dialog
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const SharePopup = ({ username, onClose }) => {
-  const shareLink = `${window.location.origin}/challenge?user=${username}`;
+  const shareLink = `${window.location.origin}/challenge?user=${username}`; // Generate share link
   const whatsappLink = `https://api.whatsapp.com/send?text=Join%20me%20in%20the%20Globetrotter%20Challenge!%20Check%20out%20my%20score%20and%20play:%20${encodeURIComponent(
     shareLink
-  )}`;
+  )}`; // Generate WhatsApp share link
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(shareLink);
-    alert("Link copied to clipboard!");
+    navigator.clipboard.writeText(shareLink); // Copy link to clipboard
+    alert("Link copied to clipboard!"); // Show alert
   };
 
   return (

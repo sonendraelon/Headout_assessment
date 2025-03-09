@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const openaiApiKey = process.env.OPENAI_API_KEY;
 
+// Function to expand the dataset using OpenAI API
 async function expandDataset(prompt) {
   try {
     const response = await axios.post(

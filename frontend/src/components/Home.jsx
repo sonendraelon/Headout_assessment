@@ -14,11 +14,13 @@ import {
 } from "@mui/material";
 import SharePopup from "./SharePopup";
 
+// Home component handles user registration and challenge functionality
 const Home = () => {
   const [username, setUsername] = useState("");
   const [showShare, setShowShare] = useState(false);
   const navigate = useNavigate();
 
+  // Handles user registration
   const handleRegister = async (e) => {
     e.preventDefault();
     if (!username) return;
@@ -36,6 +38,7 @@ const Home = () => {
     }
   };
 
+  // Handles challenge functionality
   const handleChallenge = () => {
     if (!username) {
       alert("Please enter a username first");
