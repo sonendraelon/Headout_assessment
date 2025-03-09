@@ -24,7 +24,7 @@ Globetrotter is designed to be an engaging and educational game that tests users
 - React
 - Vite
 - ESLint
-- CSS for styling
+- MUI for styling
 - Confetti.js for animations
 
 ### Features
